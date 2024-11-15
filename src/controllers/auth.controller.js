@@ -25,7 +25,7 @@ export class AuthController {
 
       const token = createToken(user);
       // Guardar el token en en una cookie
-      res.cookie("token", token, { maxAge: 3600000 });
+      res.cookie("token", token, { secure: true, httpOnly: true });
 
       res.json({ status: "ok", user });
     } catch (error) {
