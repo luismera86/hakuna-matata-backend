@@ -25,7 +25,7 @@ export class AuthController {
 
       const token = createToken(user);
       // Guardar el token en en una cookie
-      res.cookie("token", token, { secure: true, httpOnly: true });
+      res.cookie("token", token, { secure: true, httpOnly: true, sameSite: "none" });
 
       res.json({ status: "ok", user });
     } catch (error) {
