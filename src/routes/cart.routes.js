@@ -6,9 +6,9 @@ const cartController = new CartController();
 const isLoginMiddleware = new IsLoginMiddleware();
 const router = Router();
 
-router.post('/', isLoginMiddleware.isLogin, cartController.addToCart); // Asegúrate de que `addToCart` esté definido
-router.get('/', isLoginMiddleware.isLogin, cartController.getCartByUserId); // Asegúrate de que `getCartByUserId` esté definido
-router.delete('/:cartId', isLoginMiddleware.isLogin, cartController.deleteCart); // Asegúrate de que `deleteCart` esté definido
+router.post('/',  cartController.addToCart); // Asegúrate de que `addToCart` esté definido
+router.get('/',  cartController.getCartByUserId); // Asegúrate de que `getCartByUserId` esté definido
+router.delete('/:cartId',  cartController.deleteCart); // Asegúrate de que `deleteCart` esté definido
 
 
 export default router;
